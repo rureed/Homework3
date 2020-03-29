@@ -18,9 +18,10 @@ function generatePassword () {
   // var password = ""
 
   if(setLength === ""){
-    alert("Please set a valid length from 8 - 128.");
+    alert("Please start over and set a VALID length from 8 - 128 characters.\n(SMH)");
+      location.reload(forceget);
   } else if (setLength < 8 || setLength > 128){
-      alert("Please set a valid length from 8 - 128.");
+      alert("Please start over and set a VALID length from 8 - 128 characters.\n(SMH)");
       location.reload(forceget);
   }
   
