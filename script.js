@@ -12,6 +12,7 @@ function generatePassword () {
   var lows = "abcdefghijklmnopqrstuvwxyz";
   var syms = "!#$%&'()*+,-./:;<=>?@[^_`{|}~";
   var choice = "";
+  var password = "";
   
   if(setLength === ""){
     alert("Please start over and set a VALID length from 8 - 128 characters.\n(SMH)");
