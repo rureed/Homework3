@@ -13,9 +13,9 @@ function generatePassword () {
   var lows = "abcdefghijklmnopqrstuvwxyz";
   var syms = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   var choice = "";
-  var length = "";
+  // var length = "";
 
-  // var password = ""
+  
 
   if(setLength === ""){
     alert("Please start over and set a VALID length from 8 - 128 characters.\n(SMH)");
@@ -26,22 +26,27 @@ function generatePassword () {
   }
   
   useNum = confirm("Include numerals?");
-  if(useNum === true){
-    choice = choice + nums
+  if(useNum == true){
+    choice = choice.concat(nums);
   } 
   useLo = confirm("Include lower case?");
-  if(useLo === true){
-    choice = choice + lows
+  if(useLo == true){
+    choice = choice.concat(lows);
   }
   useUp = confirm("Include upper case?");
-  if(useUp === true){
-    choice = choice + ups
+  if(useUp == true){
+    choice = choice.concat(ups);
   }
   useSym = confirm("Include special characters?");
-  if(useSym === true){
-    choice = choice + syms
+  if(useSym == true){
+    choice = choice.concat(syms);
   }
 
+  
+  for (var i = 0; i < setLength; i++) {
+    password += choice[Math.floor(Math.random() * choice.length)];
+  }
+  console.log(setLength)
   return password
 }
 
@@ -54,6 +59,8 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
