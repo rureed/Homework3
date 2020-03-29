@@ -4,10 +4,10 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword () {
   var setLength = prompt("Choose password length: 8 - 128 characters.");
-  var useNum = confirm("Include numerals?");
-  var useLo = confirm("Include lower case?");
-  var useUp = confirm("Include upper case?");
-  var useSym = confirm("Include special characters?");
+  var useNum;
+  var useLo;
+  var useUp;
+  var useSym;
   var nums = "1234567890";
   var ups = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lows = "abcdefghijklmnopqrstuvwxyz";
@@ -16,22 +16,27 @@ function generatePassword () {
   var length = "";
 
   // var password = ""
-  
+
   if(setLength === ""){
     alert("Please set a valid length from 8 - 128.");
   } else if (setLength < 8 || setLength > 128){
       alert("Please set a valid length from 8 - 128.");
+      location.reload(forceget);
   }
   
+  useNum = confirm("Include numerals?");
   if(useNum === true){
     choice = choice + nums
   } 
+  useLo = confirm("Include lower case?");
   if(useLo === true){
     choice = choice + lows
   }
+  useUp = confirm("Include upper case?");
   if(useUp === true){
     choice = choice + ups
   }
+  useSym = confirm("Include special characters?");
   if(useSym === true){
     choice = choice + syms
   }
